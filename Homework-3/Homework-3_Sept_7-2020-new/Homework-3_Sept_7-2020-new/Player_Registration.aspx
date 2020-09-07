@@ -17,10 +17,10 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtFirstName" runat="server" value="First Name"></asp:TextBox>
+                        <asp:TextBox ID="txtFirstName" runat="server" value="First Name" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtLastName" runat="server" value="Last Name"></asp:TextBox>
+                        <asp:TextBox ID="txtLastName" runat="server" value="Last Name" class="form-control"></asp:TextBox>
                     </div>
                 </div>
 
@@ -29,51 +29,51 @@
                 <%--Street address and City/town--%>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtStreetAddress" runat="server" value="Street Address"></asp:TextBox>
+                        <asp:TextBox ID="txtStreetAddress" runat="server" value="Street Address" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtCity" runat="server" value="City/Town"></asp:TextBox>
+                        <asp:TextBox ID="txtCity" runat="server" value="City/Town" class="form-control"></asp:TextBox>
                     </div>
                 </div>
 
                 <%--Country/Phone--%>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtCountry" runat="server" value="Country"></asp:TextBox>
+                        <asp:TextBox ID="txtCountry" runat="server" value="Country" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtPhone" runat="server" value="Phone"></asp:TextBox>
+                        <asp:TextBox ID="txtPhone" runat="server" value="Phone" class="form-control"></asp:TextBox>
                     </div>
                 </div>
 
                 <%--Email--%>
                 <div class="form-row">
-                    <asp:TextBox ID="txtEmail" runat="server" value="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" value="Email" class="form-control"></asp:TextBox>
                 </div>
 
                 <%--Unsubscribe--%>
                 <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="vehicle1" value="Bike" />
-                    <asp:Label ID="unsubscribe" runat="server" Text="Label">Unsubscribe from marketing emails</asp:Label>
+                    <input type="checkbox" id="unsubscribeCheckbox" name="vehicle1" value="Bike"  class="form-control"/>
+                    <asp:Label ID="unsubscribe" runat="server" Text="Label" class="form-control">Unsubscribe from marketing emails</asp:Label>
                 </div>
 
                 <%--Username and password--%>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtUsername" runat="server" value="Username"></asp:TextBox>
+                        <asp:TextBox ID="txtUsername" runat="server" value="Username" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtPassword" runat="server" value="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" value="Password" class="form-control"></asp:TextBox>
                     </div>
                 </div>
 
                 <%--Gamer Tag and Games played--%>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtGamerTag" runat="server" value="Gamer Tag"></asp:TextBox>
+                        <asp:TextBox ID="txtGamerTag" runat="server" value="Gamer Tag" class="form-control"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtGamesPlayed" runat="server" value="Games Played"></asp:TextBox>
+                        <asp:TextBox ID="txtGamesPlayed" runat="server" value="Games Played" class="form-control"></asp:TextBox>
                     </div>
                 </div>
 
