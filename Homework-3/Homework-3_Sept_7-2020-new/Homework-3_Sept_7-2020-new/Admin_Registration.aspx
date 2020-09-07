@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Player_Registration.aspx.cs" Inherits="Homework_3_Sept_7_2020_new.Player_Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Registration.aspx.cs" Inherits="Homework_3_Sept_7_2020_new.WebForm1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Griz Esports Player Registration</title>
+    <title>Griz Esports Admin Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 </head>
 <body>
     <<div class="container">
-        <h1>Player Registration</h1>
+        <h1>Admin Registration</h1>
 
         <div class="container">
             <form id="form1" runat="server">
