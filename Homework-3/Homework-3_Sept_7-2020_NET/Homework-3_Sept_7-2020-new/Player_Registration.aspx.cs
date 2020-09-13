@@ -13,10 +13,10 @@ namespace Homework_3_Sept_7_2020_new
         {
 
         }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            string welcomePlayerRegistrationMessage = txtUsername.Text;
+            lblWelcomePlayerRegistrationMessage.Text = "Welcome to Griz Esports " + welcomePlayerRegistrationMessage;
         }
     }
 }

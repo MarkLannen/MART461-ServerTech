@@ -15,6 +15,15 @@ namespace Homework_3_Sept_7_2020_new
     {
 
         /// <summary>
+        /// lblWelcomePlayerRegistrationMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWelcomePlayerRegistrationMessage;
+
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

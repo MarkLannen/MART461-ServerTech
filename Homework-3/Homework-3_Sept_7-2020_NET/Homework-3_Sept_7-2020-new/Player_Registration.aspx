@@ -9,81 +9,88 @@
     <link href="Styles.css" rel="stylesheet" />
 </head>
 <body>
-    <<div class="container">
+    <div class="container">
         <h1>Player Registration</h1>
-
-        <div class="container">
-            <form id="form1" runat="server">
-                <%--First name and last name text fields--%>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtFirstName" runat="server" value="First Name" class="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtLastName" runat="server" value="Last Name" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-
-
-                <%--Street address and City/town--%>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtStreetAddress" runat="server" value="Street Address" class="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtCity" runat="server" value="City/Town" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <%--Country/Phone--%>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtCountry" runat="server" value="Country" class="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtPhone" runat="server" value="Phone" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <%--Email--%>
-                <div class="form-row">
-                    <asp:TextBox ID="txtEmail" runat="server" value="Email" class="form-control"></asp:TextBox>
-                </div>
-
-                <%--Unsubscribe--%>
-                <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="vehicle1" value="Bike"/>
-                    <asp:Label ID="unsubscribe" runat="server" Text="Label">Unsubscribe from marketing emails</asp:Label>
-                </div>
-
-                <%--Username and password--%>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtUsername" runat="server" value="Username" class="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtPassword" runat="server" value="Password" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <%--Gamer Tag and Games played--%>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtGamerTag" runat="server" value="Gamer Tag" class="form-control"></asp:TextBox>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <asp:TextBox ID="txtGamesPlayed" runat="server" value="Games Played" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-
-                <asp:Button ID="btnSubmit" runat="server" Text="REGISTER" OnClick="btnSubmit_Click" class="form-control" />
-
-
-            </form>
+       <%--  Label for Welcome message --%>
+        <div class="mt-3 mb-4">
+            <asp:Label class="text-white font-weight-bold" ID="lblWelcomePlayerRegistrationMessage" runat="server" Text=""></asp:Label>
+            <p></p>
         </div>
+    </div>
+
+
+    <div class="container">
+        <form id="form1" runat="server">
+            <%--First name and last name text fields--%>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtFirstName" runat="server" value="First Name" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtLastName" runat="server" value="Last Name" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+
+
+
+            <%--Street address and City/town--%>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtStreetAddress" runat="server" value="Street Address" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtCity" runat="server" value="City/Town" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+
+            <%--Country/Phone--%>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtCountry" runat="server" value="Country" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtPhone" runat="server" value="Phone" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+
+            <%--Email--%>
+            <div class="form-row">
+                <asp:TextBox ID="txtEmail" runat="server" value="Email" class="form-control"></asp:TextBox>
+            </div>
+
+            <%--Unsubscribe--%>
+            <div class="mt-3 mb-4">
+                <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
+                <asp:Label class="text-white" ID="unsubscribe" runat="server" Text="Label">Unsubscribe from marketing emails</asp:Label>
+            </div>
+
+            <%--Username and password--%>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtUsername" runat="server" value="Username" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtPassword" runat="server" value="Password" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+
+            <%--Gamer Tag and Games played--%>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtGamerTag" runat="server" value="Gamer Tag" class="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group col-md-6">
+                    <asp:TextBox ID="txtGamesPlayed" runat="server" value="Games Played" class="form-control"></asp:TextBox>
+                </div>
+            </div>
+
+
+            <asp:Button ID="btnSubmit" runat="server" Text="REGISTER" OnClick="btnSubmit_Click" class="form-control" />
+
+
+        </form>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
