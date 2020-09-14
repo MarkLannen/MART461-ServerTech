@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Player_Registration.aspx.cs" Inherits="Homework_4_Sept_14_2020.Player_Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Player_Registration_Cookie.aspx.cs" Inherits="Homework_4_Sept_14_2020.Player_Registration_Cookie" %>
 
 <!DOCTYPE html>
 
@@ -92,8 +92,7 @@
                 </div>
             </div>
 
-
-            <asp:Button ID="btnSubmit" runat="server" Text="REGISTER" OnClick="btnSubmit_Click" class="form-control" />
+            <asp:Button ID="createCookie" runat="server" Text="Create Cookie" OnClick="btnSubmit_Click" CssClass="form-control" />
 
         </form>
     </div>

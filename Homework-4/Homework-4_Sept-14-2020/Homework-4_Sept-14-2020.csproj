@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Player_Registration.aspx" />
-    <Content Include="Player_Registration_Confirmation.aspx" />
+    <Content Include="Player_Registration_Cookie.aspx" />
     <Content Include="Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -80,12 +80,12 @@
     <Compile Include="Player_Registration.aspx.designer.cs">
       <DependentUpon>Player_Registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Player_Registration_Confirmation.aspx.cs">
-      <DependentUpon>Player_Registration_Confirmation.aspx</DependentUpon>
+    <Compile Include="Player_Registration_Cookie.aspx.cs">
+      <DependentUpon>Player_Registration_Cookie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Player_Registration_Confirmation.aspx.designer.cs">
-      <DependentUpon>Player_Registration_Confirmation.aspx</DependentUpon>
+    <Compile Include="Player_Registration_Cookie.aspx.designer.cs">
+      <DependentUpon>Player_Registration_Cookie.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
