@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Homework-4_Sessions.aspx" />
     <Content Include="Player_Registration.aspx" />
     <Content Include="Player_Registration_Cookie.aspx" />
     <Content Include="Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Homework-4_Sessions.aspx.cs">
+      <DependentUpon>Homework-4_Sessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homework-4_Sessions.aspx.designer.cs">
+      <DependentUpon>Homework-4_Sessions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Player_Registration.aspx.cs">
       <DependentUpon>Player_Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
