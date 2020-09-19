@@ -12,7 +12,7 @@
 <body>
 
     <div class="container">
-            <h1 class="mb-5 mt-5 text-center"Create a session</h1>
+            <h1 class="mb-5 mt-5 text-center">Create a session</h1>
             
     <!-- Create Session Variable -->
     <div class="container">
