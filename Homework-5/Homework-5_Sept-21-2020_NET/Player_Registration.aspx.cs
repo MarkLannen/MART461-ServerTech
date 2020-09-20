@@ -13,29 +13,33 @@ namespace Homework_5_Sept_21_2020_NET
         {
             string userName = Request.QueryString["txtUsername"];
             lblPlayerWelcome.Text = "Welcome to Griz Esports" + " " + userName;
-            lblGamesPlayed.Text = " ";
+           
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Player_Registration.aspx?txtUsername=" + txtUsername.Text);
+            //Response.Redirect("Player_Registration.aspx?txtUsername=" + txtUsername.Text);
 
-            lblGamesPlayed.Text = " ";
+            string userName = Request.QueryString["txtUsername"];
+            lblPlayerWelcome.Text = "Welcome to Griz Esports" + " " + userName;
+
             if (cbSolitaire.Checked)
             {
-                lblGamesPlayed.Text = "You have checked Checkbox 1.";
+                lblGamesPlayed.Text = "You have selected Solitaire.";
             }
             if (cbTetris.Checked)
             {
-                lblGamesPlayed.Text += "You have checked Checkbox 2.";
+                lblGamesPlayed.Text += "You have selected Tetris.";
             }
             if (cbPong.Checked)
             {
-                lblGamesPlayed.Text += "You have checked Checkbox 3.";
+                lblGamesPlayed.Text += "You have selected Pong.";
             }
             if (!cbPong.Checked && !cbSolitaire.Checked && !cbTetris.Checked)
             {
                 lblGamesPlayed.Text = "You have not selected anything!";
             }
+
+
         }
     }
 }
