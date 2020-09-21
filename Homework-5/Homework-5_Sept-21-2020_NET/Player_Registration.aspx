@@ -60,8 +60,9 @@
                 </div>
                 <div class="form-group col-md-6 text-white">
                     <asp:Label ID="Label2" runat="server" Text="" AssociatedControlId="txtPhone">Phone</asp:Label>
-                    <asp:TextBox ID="txtPhone" runat="server" value="" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtPhone" runat="server" value="" class="form-control" OnTextChanged="txtPhone_TextChanged"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="* Phone Number Required" ControlToValidate="txtPhone"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="* Please enter a valid phone number" ControlToValidate="txtPhone" ValidateRequestMode="Enabled" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
                 </div>
             </div>
 
@@ -69,7 +70,7 @@
             <div class="form-row">
                 <asp:Label ID="Label3" runat="server" Text="" AssociatedControlId="txtEmail">Email</asp:Label>
                 <asp:TextBox ID="txtEmail" runat="server" value="" class="form-control"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Email Required" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="* Email Required" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RequiredFieldValidator>
 
             </div>
 

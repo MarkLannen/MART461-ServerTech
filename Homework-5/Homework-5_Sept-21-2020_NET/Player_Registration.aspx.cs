@@ -41,5 +41,10 @@ namespace Homework_5_Sept_21_2020_NET
 
 
         }
+
+        protected void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
