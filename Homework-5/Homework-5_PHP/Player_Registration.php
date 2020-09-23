@@ -13,35 +13,12 @@
 
     <!-- Global PHP variables -->
     <?php 
-
-        $gamesPlayed = "";
-        $userName = "";
-        $phone = "";
-        $email = "";
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-    {
-        if (!empty($_POST[""])) 
-        {
-            $userName = $_POST["txtUserName"];
-        }
-        else
-        {
-            echo("User Name is a required field.");
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "UserName") {
+                echo ("* User Name is required.");
+            }
         }
        
-        $email = $_POST["email"];
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
-        {
-            echo ("Please enter a valid email<br/>");
-        }
-
-        $phone = $_POST["txtPhone"];
-            if (!empty($_POST[""])) 
-        {
-            echo("Phone number is a required field.");
-        }
-    }
 
     ?>
 
@@ -78,14 +55,14 @@
                     </div>
                     <div class="form-group col-md-6">
                         <input type="text" id="txtPhone" value="Phone" class="form-control" name="txtPhone"
-                        <?php echo ($phone) ?>></input>
+                        ></input>
                     </div>
                 </div>
 
                 <!-- <%--Email--%> -->
                 <div class="form-row">
                     <input type="text" id="txtEmail" value="Email" class="form-control" name="txtEmail"
-                    <?php echo ($email) ?>></input>
+                   ></input>
                 </div>
 
                 <!-- <%--Unsubscribe--%> -->
@@ -104,8 +81,8 @@
                 <!-- <%--Username and password--%> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input id="txtUserName" value="Username" class="form-control" name="txtUserName" 
-                        <?php echo ($userName) ?>></input>
+                        <input id="txtUserName" class="form-control" name="txtUserName" 
+                        ></input>
                     </div>
                     <div class="form-group col-md-6">
                         <input type="text" id="txtPassword" value="Password" class="form-control"></input>
