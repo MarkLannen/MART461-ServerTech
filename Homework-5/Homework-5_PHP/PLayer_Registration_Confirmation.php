@@ -11,29 +11,48 @@ $gamesPlayed = "";
 $userName = "";
 $phone = "";
 $email = "";
+$errMessage = "";
+
+print_r($_POST);
 
 //Return to main page if User Name is blank
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")  {
 
+   // $gamesPlayed = $_POST["gamesPlayed"];
     if (!empty($_POST["txtUserName"])) {
         $userName = $_POST["txtUserName"];
     } else  {
-        header("Location: Player_Registration.php?userNameError=UserName");
+        $errMessage = "userNameError=UserName";
     }
 }
 
 //Return to main page if email is invalid
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["txtEmail"];
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: Player_Registration.php?emailError=email");
+
+        if ($errMessage != "") {
+            $errMessage = $errMessage . "&emailError=email";
+        } else {
+            $errMessage="emailError=email";
+        }       
     }
 }
 
 //Return to main page if phone number is blank
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["txtPhone"])) {
-        header("Location: Player_Registration.php?phoneNumberError=phone");
+        if ($errMessage != "") {
+            $errMessage = $errMessage . "&phoneNumberError=phone";
+        } else {
+            $errMessage="phoneNumberError=phone";
+        }
+
+        
     }
+}
+if ($errMessage!="") {
+    header("Location: Player_Registration.php?" . $errMessage);
 }
 
 ?>
@@ -50,7 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?> 
             <p>
             <?php
-             if (isset($gamesPlayedgames) && $gamesPlayed=='solitaire') {
+           
+             if (isset($gamesPlayed) && $gamesPlayed=='solitaire') {
                 echo ("You have selected Solitaire");
             }
             ?>    

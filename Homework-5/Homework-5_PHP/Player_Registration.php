@@ -19,13 +19,13 @@
             if ($_GET["userNameError"] == "UserName") {
                 echo ("* User Name is required.");
             }
-        }else 
+        } 
 
         if (isset($_GET["emailError"])) {
             if ($_GET["emailError"] == "email") {
                 echo ("* Valid email is required.");
             }
-        } else
+        } 
 
         if (isset($_GET["phoneNumberError"])) {
             if ($_GET["phoneNumberError"] == "phone") {
