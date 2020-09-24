@@ -12,23 +12,30 @@ $userName = "";
 $phone = "";
 $email = "";
 
+//Return to main page if User Name is blank
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     if (!empty($_POST["txtUserName"])) {
         $userName = $_POST["txtUserName"];
     } else  {
         header("Location: Player_Registration.php?userNameError=UserName");
     }
+}
 
-    $email = $_POST["txtEmail"];
+//Return to main page if email is invalid
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: Player_Registration.php?emailError=email");
     }
-
-    $phone = $_POST["txtPhone"];
-        if (!empty($_POST["txtPhone"])) {
-            header("Location: Player_Registration.php?phoneNumberError=phone");
-        }
 }
+
+//Return to main page if phone number is blank
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["txtPhone"])) {
+        header("Location: Player_Registration.php?phoneNumberError=phone");
+    }
+}
+
 ?>
 
 </head>
