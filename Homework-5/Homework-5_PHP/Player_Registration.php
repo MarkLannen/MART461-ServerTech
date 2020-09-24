@@ -11,57 +11,78 @@
 
 <body class="mb-4">
 
-    <!-- Global PHP variables -->
+    <div class="container text-white">
+    <!-- Return error Messages from Confirmation page -->
     <?php 
-        if (isset($_GET["error"])) {
-            if ($_GET["error"] == "UserName") {
+        if (isset($_GET["userNameError"])) {
+            if ($_GET["userNameError"] == "UserName") {
                 echo ("* User Name is required.");
             }
         }
-       
 
+        if (isset($_GET["emailError"])) {
+            if ($_GET["emailError"] == "email") {
+                echo ("* Valid email is required.");
+            }
+        }
+
+        if (isset($_GET["phoneNumberError"])) {
+            if ($_GET["phoneNumberError"] == "phone") {
+                echo ("* Phone number is required.");
+            }
+        }  
     ?>
+
+    </div>
 
     <div class="container">
         <h1 class="mb-5 mt-5 text-center">Player Registration - Validation Homework</h1>
 
         <div class="container text-white">
             <form action="Player_Registration_Confirmation.php" method="POST">
+
                 <!-- <%--First name and last name text fields--%> -->
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type=text ID="txtFirstName" value="First Name" class="form-control"></input>
+                        <label for="txtFirstName">First Name</label>
+                        <input type=text ID="txtFirstName" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" ID="txtLastName" value="Last Name" class="form-control"></input>
+                        <label for="txtLastName">Last Name</label>
+                        <input type="text" ID="txtLastName" class="form-control"></input>
                     </div>
                 </div>
 
                 <!-- <%--Street address and City/town--%> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtStreetAddress" value="Street Address" class="form-control"></input>
+                        <label for="txtStreetAddress">Street Address</label>
+                        <input type="text" id="txtStreetAddress" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtCity" value="City/Town" class="form-control"></input>
+                        <label for="txtCity">City/Town</label>
+                        <input type="text" id="txtCity" class="form-control"></input>
                     </div>
                 </div>
 
                 <!-- <%--Country/Phone--%> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtCountry" value="Country" class="form-control"></input>
+                        <label for="txtCountry">Country</label>
+                        <input type="text" id="txtCountry" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtPhone" value="Phone" class="form-control" name="txtPhone"
+                        <label for="Phone">Phone</label>
+                        <input type="text" id="txtPhone" class="form-control" name="txtPhone"
                         ></input>
                     </div>
                 </div>
 
                 <!-- <%--Email--%> -->
                 <div class="form-row">
-                    <input type="text" id="txtEmail" value="Email" class="form-control" name="txtEmail"
+                    <label for="Email">Email</label>
+                    <input type="text" id="txtEmail" class="form-control" name="txtEmail"
                    ></input>
                 </div>
 
@@ -81,18 +102,20 @@
                 <!-- <%--Username and password--%> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input id="txtUserName" class="form-control" name="txtUserName" 
-                        ></input>
+                        <label for="txtUserName">User Name</label>
+                        <input id="txtUserName" class="form-control" name="txtUserName"></input>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtPassword" value="Password" class="form-control"></input>
+                        <label for="txtPassword">Password</label>
+                        <input type="text" id="txtPassword" class="form-control"></input>
                     </div>
                 </div>
 
                 <!-- <%--Gamer Tag and Games played--%> -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" id="txtGamerTag" value="Gamer Tag" class="form-control"></input>
+                        <label for="txtGamerTag">Gamer Tag</label>
+                        <input type="text" id="txtGamerTag" class="form-control"></input>
                     </div>
                     
                 </div>
@@ -106,14 +129,14 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="tetris" name="gamesPlayed" id="chkTetris"
-                            <?php if (isset($gamesPlayed) && $gamesPlayed=="tetris") echo "checked";?>>>
+                            <?php if (isset($gamesPlayed) && $gamesPlayed=="tetris") echo "checked";?>>
                             <label class="form-check-label" for="chkTetris">
                             Tetris
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="pong" name="gamesPlayed" id="chkPong">
-                            <?php if (isset($gamesPlayed) && $gamesPlayed=="pong") echo "checked";?>>
+                            <?php if (isset($gamesPlayed) && $gamesPlayed=="pong") echo "checked";?>
                             <label class="form-check-label" for="chkPong">
                             Pong
                             </label>
