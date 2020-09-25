@@ -14,7 +14,11 @@ $email = "";
 $errMessage = "";
 
 print_r($_POST);
-print_r($_POST["gamesPlayed"]);
+if(!empty($_POST["gamesPlayed"])) {
+    print_r($_POST["gamesPlayed"]);
+}
+
+
 
 //Return to main page if User Name is blank
 if ($_SERVER["REQUEST_METHOD"] == "POST")  {
@@ -70,16 +74,18 @@ if ($errMessage!="") {
             ?> 
             <h2>
             <?php
-            
-
+          
             if (!empty($_POST["gamesPlayed"])) {
                 $gamesPlayed = $_POST["gamesPlayed"];
                 // if (isset($_POST[$gamesPlayed]) && $_POST[0]=='solitaire') {
                 //      echo ("You have selected Solitaire");
                 // }
                 echo ("You have selected" . " " . $gamesPlayed);
+            } else {
+                echo ("You did not select any games!");
             }
             ?>    
+          
             </h2>            
     </div>  
 
