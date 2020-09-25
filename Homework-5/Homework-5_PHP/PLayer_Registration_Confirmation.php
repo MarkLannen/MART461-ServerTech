@@ -73,17 +73,41 @@ if ($errMessage!="") {
             echo ($userName);
             ?> 
             <h2>
+            <?php /*
+          
+            if (!empty($_POST["gamesPlayed"])) {
+                $gamesPlayed = $_POST["gamesPlayed"];
+                
+                echo ("You have selected the following games");
+                foreach($gamesPlayed as $key => $value) {
+                    echo "$value<br/>";
+                }
+            } 
+            else {
+                echo ("You did not select any games!");
+            } */
+            ?> 
+
             <?php
           
             if (!empty($_POST["gamesPlayed"])) {
                 $gamesPlayed = $_POST["gamesPlayed"];
-                // if (isset($_POST[$gamesPlayed]) && $_POST[0]=='solitaire') {
-                //      echo ("You have selected Solitaire");
-                // }
-                echo ("You have selected" . " " . $gamesPlayed);
+               
+                // create a variable to hold all the games played.
+                $games = "";
+                // iterate over the array
+                foreach($gamesPlayed as $game)
+                {
+                    // concatenate the games selected to the string variable
+                    // you can also do this
+                    // $games .= $game . ",";
+                    $games = $games . $game . ", ";
+                }
+                echo ("You have selected" . " " . $games);
             } else {
                 echo ("You did not select any games!");
             }
+               
             ?>    
           
             </h2>            

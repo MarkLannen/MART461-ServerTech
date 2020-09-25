@@ -124,19 +124,19 @@
                 <h2 class="mb-2">Games Played</h2> 
                     <div class="container mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="solitaire" name="gamesPlayed" id="chkSolitaire" 
+                            <input class="form-check-input" type="checkbox" value="solitaire" name="gamesPlayed[]" id="chkSolitaire" 
                             <?php if (isset($gamesPlayed) && $gamesPlayed=="solitaire") echo "checked";?>>
                             <label class="form-check-label" for="chkSolitaire">Solitaire</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="tetris" name="gamesPlayed" id="chkTetris"
+                            <input class="form-check-input" type="checkbox" value="tetris" name="gamesPlayed[]" id="chkTetris"
                             <?php if (isset($gamesPlayed) && $gamesPlayed=="tetris") echo "checked";?>>
                             <label class="form-check-label" for="chkTetris">
                             Tetris
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="pong" name="gamesPlayed" id="chkPong">
+                            <input class="form-check-input" type="checkbox" value="pong" name="gamesPlayed[]" id="chkPong">
                             <?php if (isset($gamesPlayed) && $gamesPlayed=="pong") echo "checked";?>
                             <label class="form-check-label" for="chkPong">
                             Pong
