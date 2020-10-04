@@ -1,0 +1,221 @@
+.Sanchez {
+    font-family: 'Sanchez', serif;
+}
+
+.Rubik {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Sanchez', serif;
+}
+
+h1 {
+    font-size: 84px;
+}
+
+#nav-login-button {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: #00518F;
+}
+
+.heading-main {
+    color: #00518f;
+}
+
+.heading-main-text {
+    color: #00518f;
+    margin-top: 15px;
+}
+
+#heading-main-register-button {
+    /*display: flex;*/
+    color: #ffffff;
+    background-color: #C7332E;
+    border: 0;
+    margin: auto;
+    justify-content: center;
+    padding: 7px 50px 11px 50px;
+}
+
+#heading-main-info-button {
+    margin: auto;
+    padding: 8px 29px 8px 29px;
+}
+
+.main-expert-search-button {
+    background-color: #00518F;
+    color: #ffffff;
+    border: 1px solid #00518F !important;
+}
+
+.main-expert-search-input {
+    color: #00518F;
+    border: 1px solid #00518F !important;
+}
+
+.popular-categories-banner {
+    padding: 10px 0 10px 0;
+    color: white;
+    background-color: #3c3f41;
+}
+
+.card-body {
+    color: #3c3f41;
+}
+
+#heading-how-to {
+    color: #00518f;
+    font-size: 64px;
+    margin: 100px 0 100px 0;
+}
+
+.how-to-col img {
+    display: block;
+    margin: auto;
+}
+
+.page-footer {
+    background-color: #00518f;
+    color: white;
+}
+
+/*Category Profiles page*/
+
+#categories-profiles-section {
+    padding: 10px 0 10px 0;
+    background-color: #3c3f41;
+}
+
+#categories-profiles-banner h1 {
+    color: #000;
+    font-size: 2rem;
+}
+
+.expert-rating {
+    font-size: 1.5rem;
+}
+
+.category-profile-card-title {
+    font-size: 1.5rem;
+}
+
+.button-connect {
+    background-color: #C7332E;
+    color: #fff;
+    padding: 5px 50px 5px 50px;
+}
+
+.expert-rating {
+    font-size: 1rem;
+}
+
+.star-rating {
+    color: #C7332E;
+    font-size: 1rem;
+}
+
+.expert-registration-heading {
+    font-size: 1.75rem;
+    margin: 25px 0 5px 0;
+}
+
+#expert-registration-header h2 {
+    font-size: 1.25rem;
+}
+
+#expert-registration-instructions {
+    margin-bottom: 100px;
+}
+
+#expert-area-submission {
+    color: white;
+    background-color: #C7332E;
+    padding: 8px 50px 8px 50px;
+}
+
+/*Expert Home Page*/
+#expert-heading-main {
+    background-color: #3c3f41;
+    color: white;
+}
+
+/*Expert Registration Landing Page*/
+#expert-registration-landing-section {
+    background-color: #3c3f41;
+}
+
+.registration-landing-heading {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.registration-element {
+    width: 300px;
+}
+
+.registration-text {
+    color: white;
+}
+
+#expertEmailText {
+    color: white;
+}
+
+#expertPasswordText novicePasswordText {
+    color: white;
+}
+
+.register-button {
+    background-color: #C7332E;
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    margin-top: -5px;
+}
+
+/*Expert skills page*/
+
+#expert-skills-section {
+}
+
+.add-skills-buttons {
+    /*width: 450px;*/
+}
+
+.add-new-skill-button {
+    background-color: #00518f;
+    color: white;
+}
+
+.add-more-skills-button {
+    background-color: #00518f;
+    color: white;
+    width: 220px;
+}
+
+.submit-add-experience-button {
+    background-color: #C7332E;
+    color: white;
+    width: 300px;
+}
+
+.red-submit-button {
+    background-color: #C7332E;
+    color: white;
+    width: 300px;
+}
+
+/*Expert availability page*/
+.submit-view-profile-button {
+    background-color: #C7332E;
+    color: white;
+    width: 300px;
+}
+
+/*New expertise page*/
+
+#newExpertiseText {
+    color: white;
+}
