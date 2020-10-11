@@ -1,0 +1,2 @@
+INSERT INTO PLayers (FirstName, LastName, Address1, Address2, City, Zip, Country, Phone, Email, UserName, Password, GamerTag, GamesPlayed)
+VALUES ('Mark', 'Lannen', '123', 'Apt 5', 'Missoula', '59801', 'USA', '123-456-7890', 'marklannen@gmail.com', 'Admin1', 'test1234', 'Gamer1', 'Tetris');
