@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace Homework_7_Oct_11_2020
 {
@@ -15,26 +14,13 @@ namespace Homework_7_Oct_11_2020
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            string myConnectionString = 
-                ConfigurationManager.ConnectionStrings["EsportsConnectionString"].ToString();
-            //Response.Write(myConnectionString);
-            SqlConnection myConnection;
-            Response.Write("Connection Open");
-           
+            Database myDatabase = new Database();
 
-            myConnection = new SqlConnection(myConnectionString);
-            myConnection.Open();
+            string myQuery = "spSelectAllPlayers";
+            DataSet myDataSet =  myDatabase.getQueryWithoutParameters(myQuery);
 
-            string myQuery = "SELECT FirstName as 'First Name', LastName as 'Last Name', UserName as 'User Name', GamerTag as 'Gamer Tag' FROM Players ORDER BY UserName DESC";
 
-            DataSet myDataSet = new DataSet();
-            SqlCommand myCommand = new SqlCommand(myQuery);
-            myCommand.Connection = myConnection;
-            myCommand.CommandType = CommandType.Text;
-
-            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
-            myAdapter.Fill(myDataSet);
-            myConnection.Close();
+            //myConnection.Close();
 
             gvUserName.DataSource = myDataSet.Tables[0];
             gvUserName.DataBind();

@@ -1,0 +1,4 @@
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework_ASP-NET.csprojAssemblyReference.cache
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework_ASP-NET.csproj.CoreCompileInputs.cache
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework-7_Oct-11-2020.dll
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework-7_Oct-11-2020.pdb
