@@ -13,14 +13,9 @@ namespace Homework_ASPNET
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Database myDatabase = new Database();
-
-            string myQuery = "spSelectAllPlayers";
-            DataSet myDataSet =  myDatabase.getQueryWithoutParameters(myQuery);
-
-
-            //myConnection.Close();
+            Players myPlayers = new Players();
+            // DataSet myDataSet = myPlayers.getAllPlayers();
+            DataSet myDataSet = myPlayers.selectPlayerByPlayerID(6);
 
             gvUserName.DataSource = myDataSet.Tables[0];
             gvUserName.DataBind();

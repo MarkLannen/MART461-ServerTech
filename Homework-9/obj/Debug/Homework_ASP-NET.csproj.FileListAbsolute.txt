@@ -1,8 +1,5 @@
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework_ASP-NET.csprojAssemblyReference.cache
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework_ASP-NET.csproj.CoreCompileInputs.cache
-C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASP-NET.dll.config
-C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASP-NET.dll
-C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASP-NET.pdb
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\roslyn\csc.exe
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\roslyn\csc.exe.config
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\roslyn\csc.rsp
@@ -55,5 +52,8 @@ C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\roslyn\VBCSC
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework_ASP-NET.csproj.CopyComplete
-C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework__ASP-NET.dll
-C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework__ASP-NET.pdb
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASPNET.dll.config
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASPNET.dll
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\bin\Homework__ASPNET.pdb
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework__ASPNET.dll
+C:\Users\markl\Documents\Studies\MART-461_Web-Server\Homework-9\obj\Debug\Homework__ASPNET.pdb

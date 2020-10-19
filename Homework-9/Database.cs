@@ -22,6 +22,11 @@ namespace Homework_ASPNET {
             return myConnection;
         }
 
+        private void closeDatabase(SqlConnection myConnection)
+        {
+            myConnection.Close();
+        }
+
         public DataSet getQueryWithoutParameters(string query)
         {
             string myQuery = query;
@@ -34,6 +39,28 @@ namespace Homework_ASPNET {
 
             SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
             myAdapter.Fill(myDataSet);
+
+            closeDatabase(myConnection);
+
+            return myDataSet;
+        }
+
+        public DataSet getQueryWithParameters(string query, SqlParameter[] parameters) 
+        {
+            
+            string myQuery = query;
+            SqlConnection myConnection = openDatabase();
+
+            DataSet myDataSet = new DataSet();
+            SqlCommand myCommand = new SqlCommand(myQuery);
+            myCommand.Connection = myConnection;
+            myCommand.CommandType = CommandType.StoredProcedure;
+            myCommand.Parameters.AddRange(parameters);
+
+            SqlDataAdapter myAdapter = new SqlDataAdapter(myCommand);
+            myAdapter.Fill(myDataSet);
+
+            closeDatabase(myConnection);
 
             return myDataSet;
         }
