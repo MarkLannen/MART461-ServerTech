@@ -1,0 +1,11 @@
+CREATE PROCEDURE `spGetAllPeople`()
+BEGIN
+SELECT * FROM names.people;
+END$$
+
+
+CREATE PROCEDURE `spInsertNewPerson`(in firstname varchar(45), in lastname varchar(45),
+ in username varchar(45), in pwd varchar(45))
+BEGIN
+ INSERT INTO people(firstname, lastname, username, pwd) VALUES(firstname, lastname, username, pwd);
+END$$
