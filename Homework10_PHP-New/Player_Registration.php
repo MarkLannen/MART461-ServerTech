@@ -1,11 +1,13 @@
-<?php require('my_sqli_connection.php'); ?>
+<?php 
+require('pdo_connection.php'); 
+?>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>Griz Esports Player Registration - Homework 10</title>
+    <title>Griz Esports Player Registration - Homework 10 - New</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link href="Styles.css" rel="stylesheet" />
@@ -16,7 +18,7 @@
 <div class="container">
 
     <div class="container text-white">
-    <h1>Homework 10</h1>
+    <h1>Homework 10 - New</h1>
     <h2 class="mb-5">Connect to MySql Database using PHP</h2>
   
     <?php
@@ -112,7 +114,7 @@
         $stmt->bindParam(':subscribe_to_correspondence', $subscribe_to_correspondence, PDO::PARAM_STR);
         
 
-        $stmt->execute();
+        // $stmt->execute();
 
         $stmt->closeCursor();
 
@@ -128,10 +130,11 @@
             $q->setFetchMode(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
                 die("Error occurred:" . $e->getMessage());
-            }
+            }            
 
             while ($r = $q->fetch())
             {
+                
                 echo "First Name: " . $r['first_name'] . ", Last Name: " . $r['last_name'] . ", User Name: " . $r['user_name'] . "<br />";
             }
 
@@ -164,7 +167,7 @@
    
 
     <div class="container">
-        <h1 class="mb-5 mt-5 text-center">Player Registration - SQL Homework</h1>
+        <h1 class="mb-5 mt-5 text-center">Player Registration - PHP/MySQL Homework</h1>
 
         <div class="container text-white">
             <form action="Player_Registration_Confirmation.php" method="POST">
@@ -185,45 +188,49 @@
                 <!-- Street address and City/town -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="txtStreetAddress">Street Address</label>
-                        <input type="text" id="txtStreetAddress" class="form-control"></input>
+                        <label for="txtStreetAddress-1">Street Address 1</label>
+                        <input type="text" id="txtStreetAddress-1" class="form-control"></input>
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtStreetAddress-2">Street Address 2</label>
+                        <input type="text" id="txtStreetAddress-2" class="form-control"></input>
+                    </div>
+                </div>
+
+                <!-- City/State -->
+                <div class="form-row"> 
                     <div class="form-group col-md-6">
                         <label for="txtCity">City/Town</label>
                         <input type="text" id="txtCity" class="form-control"></input>
                     </div>
-                </div> 
+                    <div class="form-group col-md-6">
+                        <label for="txtState">State</label><br/>                        
+                        <?php require('register.php'); ?>      
+                    </div>
+                </div>
 
-               <!-- Country/Phone -->
-                <div class="form-row">
+                <!-- Zip/Country-->
+                <div class="form-row"> 
+                    <div class="form-group col-md-6">
+                        <label for="txtZip">Zip</label>
+                        <input type="text" id="txtZip" class="form-control"></input>
+                    </div>
                     <div class="form-group col-md-6">
                         <label for="txtCountry">Country</label>
                         <input type="text" id="txtCountry" class="form-control"></input>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="Phone">Phone</label>
-                        <input type="text" id="txtPhone" class="form-control" name="txtPhone"></input>
-                    </div>
                 </div>
 
-                <!-- Email -->
+                <!-- Phone/Email -->
                 <div class="form-row">
-                    <label for="Email">Email</label>
-                    <input type="text" id="txtEmail" class="form-control" name="txtEmail"></input>
-                </div> 
-
-                <!-- <%--Unsubscribe -->
-                <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
-                    <label class="text-white mt-4 mb-4" for="unsubscribeCheckbox">Unsubscribe from marketing
-                        emails</label>
-                </div> 
-
-                <!-- Agree to Student Conduct Code -->
-                <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
-                    <label class="text-white mt-4 mb-4" for="agreeStudentConductCode">I agree to follow the Student
-                        Conduct Code</label>
+                    <div class="form-group col-md-6">
+                        <label for="txtPhone">Phone</label>
+                        <input type="text" id="txtPhone" class="form-control"></input>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="txtEmail">Email</label>
+                        <input type="text" id="txtEmail" class="form-control"></input>
+                    </div>
                 </div>
 
                <!-- Username and password  -->
@@ -239,37 +246,56 @@
                 </div>
 
                 <!-- Gamer Tag and Games played  -->
-              <div class="form-row">
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="txtGamerTag">Gamer Tag</label>
                         <input type="text" id="txtGamerTag" class="form-control"></input>
                     </div>
+                   
+                    <!-- <div class="container mb-3"> -->
+                    <div class="form-group col-md-6">
+                        <h2 class="mb-2">Games Played</h2>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="solitaire" name="gamesPlayed[]"
+                                    id="chkSolitaire"
+                                    <?php if (isset($gamesPlayed) && $gamesPlayed=="solitaire") echo "checked";?>>
+                                <label class="form-check-label" for="chkSolitaire">Solitaire</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="tetris" name="gamesPlayed[]"
+                                    id="chkTetris" <?php if (isset($gamesPlayed) && $gamesPlayed=="tetris") echo "checked";?>>
+                                <label class="form-check-label" for="chkTetris">
+                                    Tetris
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="pong" name="gamesPlayed[]" id="chkPong">
+                                <?php if (isset($gamesPlayed) && $gamesPlayed=="pong") echo "checked";?>
+                                <label class="form-check-label" for="chkPong">
+                                    Pong
+                                </label>
+                            </div>
+                    </div>
+                </div> 
+
+
 
                 </div> 
 
-                <h2 class="mb-2">Games Played</h2>
-                <div class="container mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="solitaire" name="gamesPlayed[]"
-                            id="chkSolitaire"
-                            <?php if (isset($gamesPlayed) && $gamesPlayed=="solitaire") echo "checked";?>>
-                        <label class="form-check-label" for="chkSolitaire">Solitaire</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="tetris" name="gamesPlayed[]"
-                            id="chkTetris" <?php if (isset($gamesPlayed) && $gamesPlayed=="tetris") echo "checked";?>>
-                        <label class="form-check-label" for="chkTetris">
-                            Tetris
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="pong" name="gamesPlayed[]" id="chkPong">
-                        <?php if (isset($gamesPlayed) && $gamesPlayed=="pong") echo "checked";?>
-                        <label class="form-check-label" for="chkPong">
-                            Pong
-                        </label>
-                    </div>
+                
+                <!-- <%--Unsubscribe -->
+                <div>
+                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
+                    <label class="text-white mt-4 mb-4" for="unsubscribeCheckbox">Unsubscribe from marketing
+                        emails</label>
                 </div> 
+
+                <!-- Agree to Student Conduct Code -->
+                <div>
+                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
+                    <label class="text-white mt-4 mb-4" for="agreeStudentConductCode">I agree to follow the Student
+                        Conduct Code</label>
+                </div>
 
 
                 <button type="submit" id="btnSubmit" class="form-control">Register</button>
