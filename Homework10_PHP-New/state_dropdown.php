@@ -21,17 +21,18 @@ $q = $cn->query($sql);
 $q->setFetchMode(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Error occurred:" . $e->getMessage());
-}
-?>
-<select name="states" id="states">
-<?php 
+    }
+
+
+    $state_info = '<select class="form-group col-md-6"  name="txtStates" id="txtStates">';
    
     while ($r=$q->fetch())
     {
-?>   
-    <option value = '<?php $r['state_id']?>'><?php echo $r['state_name'] ?></option>; 
-<?php }
+        $option_info = "<option value ='"  . $r['state_id'] . "'>" . $r['state_name'] . "</option>";
+        $state_info = $state_info . $option_info;
+    }
+    $state_info = $state_info . "</select>";
+
+    echo $state_info;
+
 ?>
-</select>
-
-

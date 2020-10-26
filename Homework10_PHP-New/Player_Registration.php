@@ -80,6 +80,7 @@ require('pdo_connection.php');
         $address_2 = 'Apt 5';
         $city = 'London';
         $stateId = 5;
+        $zip = '59801';
         $country = 'England';
         $phone = '441223327253';
         $email = 'rob@cure.com';
@@ -177,11 +178,11 @@ require('pdo_connection.php');
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="txtFirstName">First Name</label>
-                        <input type=text ID="txtFirstName" class="form-control"></input>
+                        <input type=text ID="txtFirstName" name= "txtFirstName" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtLastName">Last Name</label>
-                        <input type="text" ID="txtLastName" class="form-control"></input>
+                        <input type="text" ID="txtLastName" name="txtLastName" class="form-control"></input>
                     </div>
                 </div>
 
@@ -189,11 +190,11 @@ require('pdo_connection.php');
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="txtStreetAddress-1">Street Address 1</label>
-                        <input type="text" id="txtStreetAddress-1" class="form-control"></input>
+                        <input type="text" id="txtStreetAddress-1" name="txtStreetAddress-1" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtStreetAddress-2">Street Address 2</label>
-                        <input type="text" id="txtStreetAddress-2" class="form-control"></input>
+                        <input type="text" id="txtStreetAddress-2" name="txtStreetAddress-2" class="form-control"></input>
                     </div>
                 </div>
 
@@ -201,11 +202,11 @@ require('pdo_connection.php');
                 <div class="form-row"> 
                     <div class="form-group col-md-6">
                         <label for="txtCity">City/Town</label>
-                        <input type="text" id="txtCity" class="form-control"></input>
+                        <input type="text" id="txtCity" name="txtCity" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtState">State</label><br/>                        
-                        <?php require('register.php'); ?>      
+                        <?php require('state_dropdown.php'); ?>      
                     </div>
                 </div>
 
@@ -213,11 +214,11 @@ require('pdo_connection.php');
                 <div class="form-row"> 
                     <div class="form-group col-md-6">
                         <label for="txtZip">Zip</label>
-                        <input type="text" id="txtZip" class="form-control"></input>
+                        <input type="text" id="txtZip" name="txtZip" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtCountry">Country</label>
-                        <input type="text" id="txtCountry" class="form-control"></input>
+                        <input type="text" id="txtCountry" name="txtCountry" class="form-control"></input>
                     </div>
                 </div>
 
@@ -225,11 +226,11 @@ require('pdo_connection.php');
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="txtPhone">Phone</label>
-                        <input type="text" id="txtPhone" class="form-control"></input>
+                        <input type="text" id="txtPhone" name="txtPhone" class="form-control"></input>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtEmail">Email</label>
-                        <input type="text" id="txtEmail" class="form-control"></input>
+                        <input type="text" id="txtEmail" name="txtEmail" class="form-control"></input>
                     </div>
                 </div>
 
@@ -241,7 +242,7 @@ require('pdo_connection.php');
                     </div>
                     <div class="form-group col-md-6">
                         <label for="txtPassword">Password</label>
-                        <input type="text" id="txtPassword" class="form-control"></input>
+                        <input type="text" id="txtPassword" name="txtPassword" class="form-control"></input>
                     </div>
                 </div>
 
@@ -249,7 +250,7 @@ require('pdo_connection.php');
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="txtGamerTag">Gamer Tag</label>
-                        <input type="text" id="txtGamerTag" class="form-control"></input>
+                        <input type="text" id="txtGamerTag" name="txtGamerTag" class="form-control"></input>
                     </div>
                    
                     <!-- <div class="container mb-3"> -->
@@ -285,14 +286,14 @@ require('pdo_connection.php');
                 
                 <!-- <%--Unsubscribe -->
                 <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
+                    <input type="checkbox" id="unsubscribeCheckbox" name="txtSubscribe" value="" />
                     <label class="text-white mt-4 mb-4" for="unsubscribeCheckbox">Unsubscribe from marketing
                         emails</label>
                 </div> 
 
                 <!-- Agree to Student Conduct Code -->
                 <div>
-                    <input type="checkbox" id="unsubscribeCheckbox" name="" value="" />
+                    <input type="checkbox" id="unsubscribeCheckbox" name="txtAgreeConduct" value="" />
                     <label class="text-white mt-4 mb-4" for="agreeStudentConductCode">I agree to follow the Student
                         Conduct Code</label>
                 </div>
