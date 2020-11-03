@@ -17,6 +17,6 @@
         echo 'Connection failed: ' . $e->getMessage();
     }
     
-    echo("Connected!");
+    // echo("Connected!");
 
 ?> 
