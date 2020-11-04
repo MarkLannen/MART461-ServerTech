@@ -24,6 +24,6 @@
     }
     else
     {
-        echo("Not logged in");
+        echo("You are not logged in");
     }
 ?>

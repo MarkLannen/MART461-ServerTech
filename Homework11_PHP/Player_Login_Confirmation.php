@@ -27,10 +27,17 @@
     //      }
 
     session_start();
-    $_SESSION['player_id'] = $player_id;
+    $_SESSION["player_id"] = $player_id;
+    if(!isset($_SESSION["count"])) {
+        $_SESSION["count"] = 0;
+    }
+    
     if(isset($player_id)) {
+        $_SESSION["count"] = 0;
         header("Location: Player_Admin.php");
     } else {
-        echo("You are not logged in");
+        echo("You are not logged in.");
+        $_SESSION["count"]++;
+        echo($_SESSION["count"]);
     } 
 ?>

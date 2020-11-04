@@ -76,7 +76,7 @@
         }
         else
         {
-            echo("Tough luck!");
+            echo("Sorry, you are not logged in!");
             $_SESSION["count"] = $_SESSION["count"] + 1;
             echo($_SESSION["count"]);
         }
