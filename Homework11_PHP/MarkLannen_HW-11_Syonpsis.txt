@@ -3,3 +3,11 @@ Mark Lannen
 MART 461
 
 1. All SQL queries are done through Stored Procedures using parameters. 
+
+2. On the Player Registration Confirmation page I added a function called 'escape' that checked each character entered into any field in the registration page for 
+characters such as <, >. If they are entered into the field, they will be stored in the database as &lt; and &rt; so that when they are rendered by the browser, any 
+script that might have been inserted inside a <script> tag won't run.
+
+3. I entered in a test player (player ID #45) and in the User Name and Gamer Tag fields I entered in a script and bold tags respectively. They were stored in the database
+with the angle brackets converted to their HTML entities of &lt; and &rt;, which means they won't render in the browser and any script inserted into the page will be rendered
+harmless.
