@@ -1,12 +1,3 @@
-<?php 
-require('pdo_connection.php'); 
-
-    function escape ($string) {
-        return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
-    }
-
-?>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,7 +19,7 @@ require('pdo_connection.php');
     <h2 class="mb-5">Security: SQL Injection and Cross-scripting attacks</h2>
 
     <?php
-    
+
         try {
 
             // connecting to the database
