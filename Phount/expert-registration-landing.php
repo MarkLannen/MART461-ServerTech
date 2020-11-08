@@ -102,7 +102,7 @@
                         </div>
                     </div>
 
-                    <!-- Username and password  -->
+                    <!-- Email and password  -->
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label id="lblExpertEmailText" class="text-white" for="txtExpertEmail">Email*</label>
@@ -119,6 +119,7 @@
                         </div>
                     </div>
 
+                    <!-- Username and password  -->
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label id="lblExpertUsername" for="etxtExpertUserName" class="text-white">Username*</label>
