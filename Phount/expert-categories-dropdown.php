@@ -27,7 +27,7 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
    
     while ($r=$q->fetch())
     {
-        $option_info = "<option value ='"  . $r['category_name'] . "'>" . "</option>";
+        $option_info = "<option value ='"  . $r['expertise_categoryID'] . "'>" . $r['category_name'] . "</option>";
         $expert_category = $expert_category . $option_info;
     }
     $expert_category = $expert_category . "</select>";

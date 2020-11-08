@@ -82,8 +82,7 @@
                             <label for="txtState" class="text-white">State</label><br/>                        
                             <?php require('state-dropdown.php'); ?>      
                         </div>
-                        
-                        
+                                                
                     </div>
 
                       <!-- Zip and Country  -->

@@ -23,7 +23,6 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
     die("Error occurred:" . $e->getMessage());
     }
 
-
     $state_info = '<select class="form-group col-md-6"  name="txtState" id="txtState">';
    
     while ($r=$q->fetch())
