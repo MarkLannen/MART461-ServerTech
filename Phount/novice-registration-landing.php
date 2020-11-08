@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:300|Sanchez&display=swap" rel="stylesheet">
     <!--    Custom JavaScript-->
 
-    <title>Expert Registration</title>
+    <title>Novice Registration</title>
 </head>
 
 <body>
@@ -32,23 +32,23 @@
     <section id="expert-registration-landing-section">
         <div class="container text-center py-5">
             <div class="row justify-content-center">
-                <h1 id="" class="mb-5 registration-landing-heading">Create a profile to register as an Expert</h1>
+                <h1 id="" class="mb-5 registration-landing-heading">Create a profile to register as a Novice</h1>
             </div>
             <div class="row justify-content-center">
-                <form action="expert-registration-confirmation.php" method="POST">
+                <form id="expertRegistrationForm" class="">
 
                     <!-- First and last name  -->
                     <div class="row ">
                         <div class="form-group col-md-6">
-                            <label id="lblExpertFirstName" class="text-white" for="txtExpertFirstName">First
+                            <label id="lblNoviceFirstName" class="text-white" for="txtNoviceFirstName">First
                                 Name</label>
-                            <input type="text" id="txtExpertFirstName" name="txtExpertFirstName"class="form-control registration-element"
+                            <input type="text" id="txtNoviceFirstName" class="form-control registration-element"
                                 aria-describedby="firstNameHelp" placeholder="Enter First Name"></input>
                             <small id="firstNameHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group col-md-6">
-                            <label id="lblExpertLastName" class="text-white" for="txtExpertLastName">Last Name</label>
-                            <input type="text" id="txtExpertLastName" name="txtExpertLastName"class="form-control registration-element"
+                            <label id="lblNoviceLastName" class="text-white" for="txtENoviceLastName">Last Name</label>
+                            <input type="text" id="txtNoviceLastName" class="form-control registration-element"
                                 aria-describedby="lastNameHelp" placeholder="Enter Last Name"></input>
                             <small id="lastNameHelp" class="form-text text-muted"></small>
                         </div>
@@ -58,13 +58,13 @@
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label id="lblAddress-1" class="text-white" for="txtAddress-1">Address 1</label>
-                            <input type="text" id="txtAddress-1" name="txtAddress-1" class="form-control registration-element"
+                            <input type="text" id="txtAddress-1" class="form-control registration-element"
                                 aria-describedby="addres-1Help" placeholder="Enter Address 1"></input>
                             <small id="addres-1Help" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group col-md-6">
                             <label id="lblAddress-2" class="text-white" for="txtAddress-2">Address 2</label>
-                            <input type="text" id="txtAddress-2" name="txtAddress-2" class="form-control registration-element"
+                            <input type="text" id="txtAddress-2" class="form-control registration-element"
                                 aria-describedby="lastNameHelp" placeholder="Enter Address 2"></input>
                             <small id="addres-2Help" class="form-text text-muted"></small>
                         </div>
@@ -74,7 +74,7 @@
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label id="lblCity" class="text-white" for="txtCity">City</label>
-                            <input type="text" id="txtCity" name="txtCity" class="form-control registration-element"
+                            <input type="text" id="txtCity" class="form-control registration-element"
                                 aria-describedby="cityHelp" placeholder="Enter City"></input>
                             <small id="cityHelp" class="form-text text-muted"></small>
                         </div>
@@ -82,21 +82,21 @@
                             <label for="txtState" class="text-white">State</label><br/>                        
                             <?php require('state-dropdown.php'); ?>      
                         </div>
-                        
-                        
+                       
                     </div>
 
                       <!-- State and Country  -->
                       <div class="row ">
                       <div class="form-group col-md-6">
                             <label id="lblZip" class="text-white" for="txtZip">Zip</label>
-                            <input type="text" id="txtZip" name="txtZip"class="form-control registration-element"
+                            <input type="text" id="txtZip" class="form-control registration-element"
                                 aria-describedby="zipHelp" placeholder="Zip"></input>
                             <small id="zipHelp" class="form-text text-muted"></small>
                         </div>
+                       
                         <div class="form-group col-md-6">
                             <label id="lblCountry" class="text-white" for="txtCountry">Country</label>
-                            <input type="text" id="txtCountry" name="txtCountry" class="form-control registration-element"
+                            <input type="text" id="txtCountry" class="form-control registration-element"
                                 aria-describedby="countryHelp" placeholder="Country"></input>
                             <small id="countryHelp" class="form-text text-muted"></small>
                         </div>
@@ -105,15 +105,15 @@
                     <!-- Username and password  -->
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label id="lblExpertEmailText" class="text-white" for="txtExpertEmail">Email*</label>
-                            <input type="text" id="txtExpertEmail" name="txtExpertEmail" class="form-control registration-element"
+                            <label id="lblNoviceEmailText" class="text-white" for="txtNoviceEmail">Email*</label>
+                            <input type="text" id="txtNoviceEmail" class="form-control registration-element"
                                 aria-describedby="emailHelp" placeholder="Enter Email"></input>
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group col-md-6">
-                            <label id="lblExpertPhoneNumber" class="text-white" for="txtExpertPhone">Phone
+                            <label id="lblNovicePhoneNumber" class="text-white" for="txtNovicePhoneNumber">Phone
                                 Number</label>
-                            <input type="text" id="txtExpertPhone" name="txtExpertPhone" class="form-control registration-element"
+                            <input type="text" id="txtNovicePhoneNumber" class="form-control registration-element"
                                 aria-describedby="phoneNumberHelp" placeholder="Enter Phone Number"></input>
                             <small id="phoneNumberHelp" class="form-text text-muted"></small>
                         </div>
@@ -121,15 +121,15 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label id="lblExpertUsername" for="etxtExpertUserName" class="text-white">Username*</label>
-                            <input type="text" id="txtExpertUserName" name="txtExpertUserName" class="form-control registration-element"
+                            <label id="lblNoviceUsername" for="txtNoviceUserName" class="text-white">Username*</label>
+                            <input type="text" id="txtNoviceUserName" class="form-control registration-element"
                                 aria-describedby="usernameHelp" placeholder="Enter Username"></input>
                             <small id="usernameHelp" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group col-md-6">
-                            <label id="lblExpertPasswordText" for="txtExpertPassword"
+                            <label id="lblNovicePasswordText" for="txtNovicePassword"
                                 class="text-white">Password*</label>
-                            <input type="text" id="txtExpertPassword" name="txtExpertPassword" class="form-control registration-element"
+                            <input type="text" id="txtNovicePassword" class="form-control registration-element"
                                 aria-describedby="passwordHelp" placeholder="Enter Password"></input>
                             <small id="passwordHelp" class="form-text text-muted"></small>
                         </div>
