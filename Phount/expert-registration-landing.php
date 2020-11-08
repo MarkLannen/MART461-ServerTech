@@ -89,8 +89,8 @@
                       <!-- State and Country  -->
                       <div class="row ">
                         <div class="form-group col-md-6">
-                            <label for="txtState">State</label><br/>                        
-                            <?php require('state_dropdown.php'); ?>      
+                            <label for="txtState" class="text-white">State</label><br/>                        
+                            <?php require('state-dropdown.php'); ?>      
                         </div>
                         <div class="form-group col-md-6">
                             <label id="lblCountry" class="text-white" for="txtCountry">Country</label>
@@ -240,7 +240,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="scripts.js"></script>
-
 
 </body>
 
