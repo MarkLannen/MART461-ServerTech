@@ -1,4 +1,4 @@
-<!-- Get form data for Player Registration  -->
+<!-- Get form data for Expert Registration and confirm Registration -->
 <?php
 
     require("pdo-connection.php");
@@ -77,5 +77,7 @@
         . " " . $pwd);
     
     }
+
+
 
 ?>

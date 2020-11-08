@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head runat="server">
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +35,7 @@
                 <h1 id="" class="mb-5 registration-landing-heading">Create a profile to register as an Expert</h1>
             </div>
             <div class="row justify-content-center">
-                <form action="expert-registration-confirmation.php" method="POST">
+                <form action="expert-registration-first-step.php" method="POST">
 
                     <!-- First and last name  -->
                     <div class="row ">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <!-- City and Zip  -->
+                    <!-- City and State  -->
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label id="lblCity" class="text-white" for="txtCity">City</label>
@@ -86,7 +86,7 @@
                         
                     </div>
 
-                      <!-- State and Country  -->
+                      <!-- Zip and Country  -->
                       <div class="row ">
                       <div class="form-group col-md-6">
                             <label id="lblZip" class="text-white" for="txtZip">Zip</label>

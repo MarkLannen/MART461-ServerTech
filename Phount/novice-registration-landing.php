@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <!-- City and Zip  -->
+                    <!-- City and State  -->
                     <div class="row ">
                         <div class="form-group col-md-6">
                             <label id="lblCity" class="text-white" for="txtCity">City</label>
@@ -85,7 +85,7 @@
                        
                     </div>
 
-                      <!-- State and Country  -->
+                      <!-- Zip and Country  -->
                       <div class="row ">
                       <div class="form-group col-md-6">
                             <label id="lblZip" class="text-white" for="txtZip">Zip</label>
