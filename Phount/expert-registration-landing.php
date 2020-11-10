@@ -137,10 +137,8 @@
 
 
 
-                    <div class="form-group">
-
-                    </div>
-                    <div class="">
+                    
+                    <div class="mt-3">
                         <button type="submit" class="btn btn-light registration-element register-button"
                             OnClick="btn_Expert_Registration">Register</button>
                     </div>

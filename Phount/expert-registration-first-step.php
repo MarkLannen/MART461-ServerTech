@@ -26,13 +26,15 @@
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #00518f">
         <div class="container-fluid">
             <a class="navbar-brand Sanchez" href="index.html">Phount</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link Rubik text-white ml-2" href="expert-registration-landing.html">Register as an Expert</a>
+                        <a class="nav-link Rubik text-white ml-2" href="expert-registration-landing.html">Register as an
+                            Expert</a>
                     </li>
                 </ul>
                 <a href="login.html" id="nav-login-button" class="btn px-4 ml-auto">Login</a>
@@ -94,7 +96,7 @@
         // echo($first_name);
 
         $sql = 'CALL spInsertNewExpertPersonalDetails(:firstname, :lastname, :address_1, :address_2, 
-        :City, :stateId, :Zip, :Country, :Email, :Phone, :Username, :Pwd)';
+        :City, :stateId, :Zip, :Country, :Email, :Phone, :Username, :Pwd, @UserID)';
         
 
         $stmt = $cn->prepare($sql);
@@ -128,53 +130,57 @@
         <div id="expert-registration-instructions" class="container">
             <h1 class="expert-registration-heading">Hi <?php echo($user_name) ?>, welcome to Phount!</h1>
             <p class="mb-5">Let's set up your profile so that you can share your expertise with the world!</p>
-            <h2 class="mb-4 ">4 steps to set up your profile - please tell us about your:</h2>
+            <h2 class="mb-4 ">2 more steps to set up your profile - please tell us about your:</h2>
             <div class="row mb-4 d-flex justify-content-start">
-                <div class="col-6 col-sm-3 text-center">
+                <div class="col-12 col-sm-6 text-center">
                     <img src="graphics/Phount-1-red-fill-35px.svg" class="mb-1" height="35px" width="35px" alt=""><br>
                     <p>Category of expertise</p>
                 </div>
-                <div class="col-6 col-sm-3 text-center">
+                <div class="col-12 col-sm-6 text-center">
                     <img src="graphics/Phount-2-red-35px.svg" class="mb-1" height="35px" width="35px" alt=""><br>
-                    <p>Specific skills</p>
+                    <p>Experience</p>
                 </div>
-                <div class="col-6 col-sm-3 text-center">
+                <!-- <div class="col-6 col-sm-3 text-center">
                     <img src="graphics/Phount-3-red-35px.svg" class="mb-1" height="35px" width="35px" alt=""><br>
                     <p>Experience</p>
                 </div>
                 <div class="col-6 col-sm-3 text-center">
                     <img src="graphics/Phount-4-red-35px.svg" class="mb-1" height="35px" width="35px" alt=""><br>
                     <p>Availability</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
     <section class="mb-5">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <img src="graphics/Phount-1-red-fill-35px.svg" class="mr-3" height="35px" width="35px" alt="Number 1">
                 <h4 class="mb-5">Let’s start with your category of expertise</h4>
             </div>
 
+            <div class="row justify-content-center">
+                <form action="expert-registration-skills.php" method="POST" id="expertRegistrationFirstStepForm"
+                    class="">
 
-            <form id="expertRegistrationFirstStepForm" class="">
-                <div class="row">
-                        
-                    <div class="form-group col-md-6">
-                        <label for="txtCategory" class="">Category</label><br/>                        
+                    <div class="form-group col-md-12">
+                        <label for="txtCategory" class="">Category</label><br />
                         <?php require('expert-categories-dropdown.php'); ?>
-                    </div>                   
-                
-                    <div class="form-group col-md-6 col-12">
+                    </div>
+
+                    <div class="mt-3 form-group col-md-12">
+                        <button type="submit" class="btn btn-light registration-element register-button"
+                            OnClick="btn_Expert_Registration_Categories">Proceed to Experience</button>
+                    </div>
+
+                    <!-- <div class="form-group col-md-6 col-12">
                         <label for="formGroupExampleInput">Was your expertise category not listed?</label>
                         <input type="text" class="form-control" id="txtNewExpertiseCategory" placeholder="Create a new expertise category"></input>
-                    </div>                   
-                </div>
-            </form>
-          
+                    </div>  
+                                      -->
+                </form>
+            </div>            
         </div>
-       
     </section>
 
     <!-- Footer -->
@@ -254,14 +260,21 @@
 
     </footer>
 
-    
+
     <!-- Footer -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
     <!-- <script type="text/javascript" src="scripts.js"></script> -->
 </body>
+
 </html>

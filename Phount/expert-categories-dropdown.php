@@ -23,7 +23,7 @@ $q->setFetchMode(PDO::FETCH_ASSOC);
     die("Error occurred:" . $e->getMessage());
     }
 
-    $expert_category = '<select class="form-group col-md-6"  name="txtCategory" id="txtCategory">';
+    $expert_category = '<select class="form-group col-md-12"  name="txtCategory" id="txtCategory">';
    
     while ($r=$q->fetch())
     {
