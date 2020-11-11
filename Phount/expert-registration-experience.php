@@ -27,6 +27,23 @@
         </div>
     </nav>
 
+    <?php
+
+        require("pdo-connection.php");
+
+        function escape ($string) {
+            return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+        }
+
+        if($_SERVER["REQUEST_METHOD"]  == "POST")  {  
+            $category = $_POST["txtCategory"];
+            $category = escape($category);
+
+            echo ('Connection Successful' . '<br />' . $category);                           
+        
+        }
+    ?>
+
     <section id="expert-skills-section" class="my-5">
         <div class="container col-md-8">
             <div class="row justify-content-center mx-3">

@@ -118,10 +118,12 @@
 
         $stmt->closeCursor();
 
+        // session_start();
+        // $_SESSION["@UserID"] = $UserID;
+
         echo ($first_name . " " . $last_name . " " . $address_1 . " " . $address_2 . " " . $city . " " 
         . $stateId . " " . $zip . " " . $country . " " . $email . " " . $phone . " " . $user_name
-        . " " . $pwd);
-    
+        . " " . $pwd);           
     }
 
 ?>
@@ -160,7 +162,7 @@
             </div>
 
             <div class="row justify-content-center">
-                <form action="expert-registration-skills.php" method="POST" id="expertRegistrationFirstStepForm"
+                <form action="expert-registration-experience.php" method="POST" id="expertRegistrationCategory"
                     class="">
 
                     <div class="form-group col-md-12">
@@ -172,12 +174,6 @@
                         <button type="submit" class="btn btn-light registration-element register-button"
                             OnClick="btn_Expert_Registration_Categories">Proceed to Experience</button>
                     </div>
-
-                    <!-- <div class="form-group col-md-6 col-12">
-                        <label for="formGroupExampleInput">Was your expertise category not listed?</label>
-                        <input type="text" class="form-control" id="txtNewExpertiseCategory" placeholder="Create a new expertise category"></input>
-                    </div>  
-                                      -->
                 </form>
             </div>            
         </div>
