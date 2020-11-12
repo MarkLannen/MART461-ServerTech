@@ -35,7 +35,7 @@
                 <h1 id="" class="mb-5 registration-landing-heading">Create a profile to register as an Expert</h1>
             </div>
             <div class="row justify-content-center">
-                <form action="expert-registration-first-step.php" method="POST">
+                <form action="expert-registration-category.php" method="POST">
 
                     <!-- First and last name  -->
                     <div class="row ">
@@ -60,13 +60,13 @@
                             <label id="lblAddress-1" class="text-white" for="txtAddress-1">Address 1</label>
                             <input type="text" id="txtAddress-1" name="txtAddress-1" class="form-control registration-element"
                                 aria-describedby="addres-1Help" placeholder="Enter Address 1"></input>
-                            <small id="addres-1Help" class="form-text text-muted"></small>
+                            <small id="address-1Help" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group col-md-6">
                             <label id="lblAddress-2" class="text-white" for="txtAddress-2">Address 2</label>
                             <input type="text" id="txtAddress-2" name="txtAddress-2" class="form-control registration-element"
                                 aria-describedby="lastNameHelp" placeholder="Enter Address 2"></input>
-                            <small id="addres-2Help" class="form-text text-muted"></small>
+                            <small id="address-2Help" class="form-text text-muted"></small>
                         </div>
                     </div>
 
