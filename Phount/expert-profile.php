@@ -1,24 +1,59 @@
 <?php
 
+    require("pdo-connection.php");
     session_start();
 
     $user_id = $_SESSION['user_id'];
     $first_name = $_SESSION['first_name'];
     $last_name = $_SESSION['last_name'];
-    $experience = $_POST['txtExpertExperience'];
+    $category_id = $_SESSION['category_id'];
 
-    echo("User ID: " . $user_id . '<br>' . $experience);
+    $experience = "";   
+    $expert_category = "";
 
-    require("pdo-connection.php");
+    //If statement
+    if($_SERVER["REQUEST_METHOD"]  == "POST")  {
+        $experience = $_POST['txtExpertExperience'];
 
-    //  Stored Procedure for inserting experience
-     $sql = 'CALL spInsertExpertExperience(:UserID, :Experience)';
+        echo("User ID: " . $user_id . '<br>' . $experience);
+
+        require("pdo-connection.php");
+
+        //  Stored Procedure for inserting experience
+        $sql = 'CALL spInsertExpertExperience(:UserID, :Experience)';
+        $stmt = $cn->prepare($sql);
+        $stmt->bindParam(':UserID', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':Experience', $experience, PDO::PARAM_STR);
+
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+    }
+    else {
+         //Build stored procedure to retrieve existing experience.
+        $sql = 'CALL spGetExpertExperience(:UserID, @Experience)';
+        $stmt = $cn->prepare($sql);
+        $stmt->bindParam(':UserID', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $rows = $cn->query("SELECT @Experience")->fetch(PDO::FETCH_ASSOC);
+        if($rows)
+        {
+            $experience = $rows['@Experience'];
+            echo("Found: " . $experience);
+        }
+    }
+
+     //Build stored procedure to retrieve Category Name.
+         
+     $sql = 'CALL spGetExpertCategory(:CategoryID, @ExpertCategory)';
      $stmt = $cn->prepare($sql);
-     $stmt->bindParam(':UserID', $user_id, PDO::PARAM_INT);
-     $stmt->bindParam(':Experience', $experience, PDO::PARAM_STR);
-
-     $stmt->setFetchMode(PDO::FETCH_ASSOC);
+     $stmt->bindParam(':CategoryID', $category_id, PDO::PARAM_INT);
      $stmt->execute();
+     $rows = $cn->query("SELECT @ExpertCategory")->fetch(PDO::FETCH_ASSOC);
+     if($rows)
+     {
+         $expert_category = $rows['@ExpertCategory'];
+         echo("Found: " . $expert_category);
+     }
 
 ?>
 
@@ -79,7 +114,11 @@
                         <div class="card-body px-2">
                             <div class="d-flex flex-row">
                                 <span class="card-title category-profile-card-title align-items-center mr-3">
-                                <?php echo $first_name . " " . $last_name;?></span>
+                                <span>
+                                    <?php 
+                                        echo $first_name . " " . $last_name;
+                                    ?>
+                                </span>
                                 <span class="expert-rating mr-3 mt-2">4.0</span>
                                 <div class="star-rating mt-2">
                                     <span>&#x2605;</span>
@@ -91,7 +130,7 @@
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
-                                    <button type="button" class="btn btn-sm mb-3 btn-info">Carpentry</button>
+                                    <button type="button" class="btn btn-sm mb-3 btn-info"><?php echo $expert_category ?></button>
                                     <!-- <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Windows</button>
                                     <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Trim</button>
                                     <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Doors</button>
@@ -108,7 +147,7 @@
                                     <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Installation</button> -->
                                 </div>
                             </div>
-                            <p class="card-text"><?php echo $experience ?></p>
+                            <p class="card-text"><?php echo $experience ?> </p>
 
                         </div>
                     </div>

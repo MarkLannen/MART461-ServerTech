@@ -32,14 +32,15 @@
         require("pdo-connection.php");
         session_start();
         $user_id = $_SESSION["user_id"];
-
-
+        
         if($_SERVER["REQUEST_METHOD"]  == "POST")  {  
         $category = $_POST["txtCategory"];
+        $_SESSION['category_id'] = $category;
         
         echo ('Connection Successful' . '<br />' . "User ID: ". $user_id
         . " CategoryID: " . $category);                          
         }
+
 
 
 
