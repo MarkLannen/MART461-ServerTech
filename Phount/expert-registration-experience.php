@@ -68,7 +68,7 @@
                     <div class="form-group col-10 col-md-8 col-lg-6">
                         <div class="form-group">
                             <label for="my-textarea">Describe Your Experience and list your specific skills</label>
-                            <textarea id="expertExperienceTextArea" class="form-control" name="" rows="3"></textarea>
+                            <textarea id="expertExperienceTextArea" class="form-control" name="txtExpertExperience" rows="3"></textarea>
                         </div>
                     </div>
                 </div>

@@ -5,20 +5,22 @@
     $user_id = $_SESSION['user_id'];
     $first_name = $_SESSION['first_name'];
     $last_name = $_SESSION['last_name'];
+    $experience = $_POST['txtExpertExperience'];
 
-    echo("User ID: " . $user_id);
+    echo("User ID: " . $user_id . '<br>' . $experience);
 
     require("pdo-connection.php");
 
-     // Stored Procedure
-     $sql = 'CALL spGetSpecificUserName(:UserID)';
+    //  Stored Procedure for inserting experience
+     $sql = 'CALL spInsertExpertExperience(:UserID, :Experience)';
      $stmt = $cn->prepare($sql);
      $stmt->bindParam(':UserID', $user_id, PDO::PARAM_INT);
+     $stmt->bindParam(':Experience', $experience, PDO::PARAM_STR);
+
      $stmt->setFetchMode(PDO::FETCH_ASSOC);
      $stmt->execute();
 
 ?>
-
 
 <!DOCTYPE html>
 
@@ -106,7 +108,7 @@
                                     <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Installation</button> -->
                                 </div>
                             </div>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur at, beatae cum iste nam nemo neque, non repudiandae sed veniam?</p>
+                            <p class="card-text"><?php echo $experience ?></p>
 
                         </div>
                     </div>
