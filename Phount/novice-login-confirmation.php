@@ -22,8 +22,10 @@
             $last_name = $rows['@lastname'];
             $category_id = $rows['@categoryid'];
 
+
             echo("Found: " . $player_id);
-        }    
+        }
+    
 
     session_start();
     $_SESSION["player_id"] = $player_id;

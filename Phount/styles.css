@@ -44,6 +44,10 @@ h1 {
     padding: 8px 29px 8px 29px;
 }
 
+.register-novice-button {
+    color: #00518F !important;
+}
+
 .main-expert-search-button {
     background-color: #00518F;
     color: #ffffff;

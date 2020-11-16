@@ -35,7 +35,7 @@
                 <h1 id="" class="mb-5 registration-landing-heading">Create a profile to register as a Novice</h1>
             </div>
             <div class="row justify-content-center">
-                <form action="novice-registration-confirmation.php" method="POST" id="noviceRegistrationForm" class="">
+                <form action="novice-profile.php" method="POST" id="noviceRegistrationForm" class="">
 
                     <!-- First and last name  -->
                     <div class="row ">
