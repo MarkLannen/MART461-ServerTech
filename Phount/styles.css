@@ -223,3 +223,8 @@ h1 {
 #newExpertiseText {
     color: white;
 }
+
+/* Set dropdown width  */
+.dropdown-menu {
+    width:100%;
+  }

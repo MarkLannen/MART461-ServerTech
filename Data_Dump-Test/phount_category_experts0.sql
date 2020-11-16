@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `expertise_category`
+-- Table structure for table `category_experts`
 --
 
-DROP TABLE IF EXISTS `expertise_category`;
+DROP TABLE IF EXISTS `category_experts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `expertise_category` (
-  `expertise_categoryID` int NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) NOT NULL,
-  PRIMARY KEY (`expertise_categoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `category_experts` (
+  `user_id` int NOT NULL,
+  `expertise_categoryID` int DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `expertise_category`
+-- Dumping data for table `category_experts`
 --
 
-LOCK TABLES `expertise_category` WRITE;
-/*!40000 ALTER TABLE `expertise_category` DISABLE KEYS */;
-INSERT INTO `expertise_category` VALUES (1,'Plumbing'),(2,'Carpentry'),(3,'Exterior'),(4,'Interior Design'),(5,'Flooring'),(8,'Electrics');
-/*!40000 ALTER TABLE `expertise_category` ENABLE KEYS */;
+LOCK TABLES `category_experts` WRITE;
+/*!40000 ALTER TABLE `category_experts` DISABLE KEYS */;
+INSERT INTO `category_experts` VALUES (141,1),(142,1),(143,1),(144,1),(145,2),(146,2),(147,2),(148,2),(149,3),(150,3),(151,3),(152,3),(153,4),(154,4),(155,4),(156,4),(157,5),(158,5),(159,5),(160,5),(161,8),(162,8),(163,8),(164,8);
+/*!40000 ALTER TABLE `category_experts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-15 19:35:48
+-- Dump completed on 2020-11-15 19:34:40
