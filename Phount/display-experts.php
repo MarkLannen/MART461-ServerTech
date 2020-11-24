@@ -1,4 +1,3 @@
-?>
 
 <!DOCTYPE html>
 
@@ -29,13 +28,10 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                
-                   
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">                   
             </div>
         </div>
     </nav>
-
     <section id="categories-profiles-banner">
         <div class="container-fluid">
             <h1>My profile</h1>
@@ -44,7 +40,82 @@
     
     <!--            Category banner-->
     <!-- Expert #1  -->
-    <section id="categories-profiles-section">
+    <?php
+        $ExpertiseCategoryID = 0;
+        if ($_SERVER['REQUEST_METHOD'] = "POST") {
+            $ExpertiseCategoryID = $_POST['txtCategory'];
+        }
+        require ("pdo-connection.php");
+        // echo $ExpertiseCategoryID;
+
+       // Build stored procedure to retrieve expert details. 
+       $sql = 'CALL spGetExpertsFromOneCategory(:ExpertiseCategoryID)';
+       $stmt = $cn->prepare($sql);
+       $stmt->bindParam(':ExpertiseCategoryID', $ExpertiseCategoryID, PDO::PARAM_INT);
+       $stmt->execute();
+       $stmt->setFetchMode(PDO::FETCH_ASSOC);  
+       
+    ?>
+
+    <?php
+
+       while ($r = $stmt->fetch())  {
+        $first_name = $r['first_name'];
+        $last_name = $r['last_name'];
+        $category_name = $r['category_name'];
+        $expert_experience = $r['expert_experience'];
+
+        echo 
+
+            "<section id='categories-profiles-section'>
+            <div class='container'>
+                <div class='card my-5'>
+                    <div class='row'>
+                        <div class='col-md-4 d-flex justify-content-center'>
+                            <div class='card-header text-center border-0 bg-white'>
+                                <img src='img/add_image-175px.png' class='img-fluid rounded-circle my-4'><br>                            
+                            </div>
+                        </div>
+                        <div class='col-md-8'>
+                            <div class='card-body px-2'>
+                                <div class='d-flex flex-row'>
+                                    <span class='card-title category-profile-card-title align-items-center mr-3'>
+                                    <span>$first_name $last_name                         
+                                            
+                                    </span>
+                                    <span class='expert-rating mr-3 mt-2'>4.0</span>
+                                    <div class='star-rating mt-2'>
+                                        <span>&#x2605;</span>
+                                        <span>&#x2605;</span>
+                                        <span>&#x2605;</span>
+                                        <span>&#x2605;</span>
+                                        <span>&#9734;</span>
+                                    </div>
+                                </div>
+                                <div class='d-flex flex-row'>
+                                    <div>
+                                        <button type='button' class='btn btn-sm mb-3 btn-info'>
+                                        $category_name
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <p class='card-text'>
+                                $expert_experience
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>"; 
+        }
+
+    ?>
+
+    <!-- <section id="categories-profiles-section">
         <div class="container">
             <div class="card my-5">
                 <div class="row">
@@ -59,7 +130,12 @@
                                 <span class="card-title category-profile-card-title align-items-center mr-3">
                                 <span>
                                     <?php 
-                                        echo $first_name . " " . $last_name;
+                                        if($r = $stmt->fetch())
+                                        {
+                                            echo("Rows: " . $r['first_name']);
+                                        } else {
+                                            echo("No rows found");
+                                        }
                                     ?>
                                 </span>
                                 <span class="expert-rating mr-3 mt-2">4.0</span>
@@ -73,143 +149,25 @@
                             </div>
                             <div class="d-flex flex-row">
                                 <div>
-                                    <button type="button" class="btn btn-sm mb-3 btn-info"><?php echo $expert_category ?></button>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Windows</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Trim</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Doors</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Patios/Decks</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Finish</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Framing</button> -->
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-info">Flooring</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Hardwood Refinishing</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Manufactured</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Installation</button> -->
-                                </div>
-                            </div>
-                            <p class="card-text"><?php echo $experience ?> </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expert #2  -->
-    <section id="categories-profiles-section">
-        <div class="container">
-            <div class="card my-5">
-                <div class="row">
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <div class="card-header text-center border-0 bg-white">
-                            <img src="img/add_image-175px.png" class="img-fluid rounded-circle my-4" alt=""><br>                            
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body px-2">
-                            <div class="d-flex flex-row">
-                                <span class="card-title category-profile-card-title align-items-center mr-3">
-                                <span>
+                                    <button type="button" class="btn btn-sm mb-3 btn-info">
                                     <?php 
-                                        echo $first_name . " " . $last_name;
+                                        // echo $expert_category 
                                     ?>
-                                </span>
-                                <span class="expert-rating mr-3 mt-2">4.0</span>
-                                <div class="star-rating mt-2">
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#9734;</span>
+                                    </button>
+                                    
                                 </div>
                             </div>
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <button type="button" class="btn btn-sm mb-3 btn-info"><?php echo $expert_category ?></button>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Windows</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Trim</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Doors</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Patios/Decks</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Finish</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Framing</button> -->
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-info">Flooring</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Hardwood Refinishing</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Manufactured</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Installation</button> -->
-                                </div>
-                            </div>
-                            <p class="card-text"><?php echo $experience ?> </p>
+                          
+                            <p class="card-text"><?php 
+                                // echo $experience 
+                            ?> </p>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Expert #3  -->
-    <section id="categories-profiles-section">
-        <div class="container">
-            <div class="card my-5">
-                <div class="row">
-                    <div class="col-md-4 d-flex justify-content-center">
-                        <div class="card-header text-center border-0 bg-white">
-                            <img src="img/add_image-175px.png" class="img-fluid rounded-circle my-4" alt=""><br>                            
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body px-2">
-                            <div class="d-flex flex-row">
-                                <span class="card-title category-profile-card-title align-items-center mr-3">
-                                <span>
-                                    <?php 
-                                        echo $first_name . " " . $last_name;
-                                    ?>
-                                </span>
-                                <span class="expert-rating mr-3 mt-2">4.0</span>
-                                <div class="star-rating mt-2">
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#x2605;</span>
-                                    <span>&#9734;</span>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <button type="button" class="btn btn-sm mb-3 btn-info"><?php echo $expert_category ?></button>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Windows</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Trim</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Doors</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Patios/Decks</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Finish</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Framing</button> -->
-                                </div>
-                            </div>
-                            <div class="d-flex flex-row">
-                                <div>
-                                    <!-- <button type="button" class="btn btn-sm mb-3 btn-info">Flooring</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Hardwood Refinishing</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Manufactured</button>
-                                    <button type="button" class="btn btn-sm mb-3 btn-outline-secondary">Installation</button> -->
-                                </div>
-                            </div>
-                            <p class="card-text"><?php echo $experience ?> </p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </section>   -->
 
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4">

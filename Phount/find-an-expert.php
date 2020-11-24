@@ -44,18 +44,23 @@
                         <div class="card-body px-2">
                             <div class="d-flex flex-row">
                                 <span class="card-title category-profile-card-title align-items-center mr-3">                                
-                                    <h2>Choose an Expert Category.</h2>
+                                    <h2>Choose an Expert Category:</h2>
                                 </span>                               
                             </div>                           
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-left">
-                        <div class="card-header text-center border-0 bg-white">
-                            <?php 
-                                require('expert-categories-dropdown.php');
-                            ?>                            
-                        </div>
+                    <div class="row justify-content-center">
+                <form action="display-experts.php" method="POST" id="displayExperts"
+                    class="">
+                    <div class="form-group col-md-12 pt-3">                        
+                        <?php require('expert-categories-dropdown.php'); ?>
                     </div>
+                    <div class="mt-3 form-group col-md-12">
+                        <button type="submit" class="btn btn-light registration-element register-button"
+                            OnClick="btn_Expert_Registration_Categories">Submit</button>
+                    </div>
+                </form>
+            </div>         
                 </div>
             </div>
         </div>
