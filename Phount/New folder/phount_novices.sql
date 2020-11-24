@@ -37,7 +37,7 @@ CREATE TABLE `novices` (
   `zip` varchar(14) DEFAULT NULL,
   `country` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `novices` (
 
 LOCK TABLES `novices` WRITE;
 /*!40000 ALTER TABLE `novices` DISABLE KEYS */;
-INSERT INTO `novices` VALUES (1,'sLannen','test1234','shuddhabha@lannen.com','123-098-7654','Shuddhabha','Lannen','123 Main St','#5','Missoula',30,'59801','USA'),(6,'eAker','test123','eric@janes.com','+15555559999','Eric','Aker','123 Janes Boulevard','#15','Long Beach',1,'90712','United States'),(7,'bCanty','test1234','brendan@fugazi.com','9995551234','Brendan','Canty','567 Main','Circle','Washington',9,'00001','United States'),(8,'bCanty','test1234','brendan@fugazi.com','9995551234','Brendan','Canty','567 Main','Circle','Washington',9,'00001','United States'),(9,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(10,'nPeart','test123','neal@rush.com','3456789012','Neal','Peart','123 Main','#4','Santa Cruz',5,'11111','USA'),(11,'nPeart','test123','neal@rush.com','3456789012','Neal','Peart','123 Main','#4','Santa Cruz',5,'11111','USA'),(12,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(13,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(14,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(15,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(16,'jRotten','test123','johnny@pistols.com','1234565789','Johnny','Rotten','76 Anarchy Way','Apt. 15','Los Angeles',5,'12335','United States'),(17,'jRotten','test123','johnny@pistols.com','1234565789','Johnny','Rotten','76 Anarchy Way','Apt. 15','Los Angeles',5,'12335','United States'),(18,'jRamone','test123','joey@ramones.com','1234565789','Joey','Ramone','#1 End of Century Way','Apt. 15','New York',33,'12335','United States');
+INSERT INTO `novices` VALUES (1,'sLannen','test1234','shuddhabha@lannen.com','123-098-7654','Shuddhabha','Lannen','123 Main St','#5','Missoula',30,'59801','USA'),(6,'eAker','test123','eric@janes.com','+15555559999','Eric','Aker','123 Janes Boulevard','#15','Long Beach',1,'90712','United States'),(7,'bCanty','test1234','brendan@fugazi.com','9995551234','Brendan','Canty','567 Main','Circle','Washington',9,'00001','United States'),(8,'bCanty','test1234','brendan@fugazi.com','9995551234','Brendan','Canty','567 Main','Circle','Washington',9,'00001','United States'),(9,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(10,'nPeart','test123','neal@rush.com','3456789012','Neal','Peart','123 Main','#4','Santa Cruz',5,'11111','USA'),(11,'nPeart','test123','neal@rush.com','3456789012','Neal','Peart','123 Main','#4','Santa Cruz',5,'11111','USA'),(12,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(13,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(14,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(15,'MarkLannen','test123','mark@lannen.com','867 5309','Mark','Lannen','656 Main St','#5','Missoula',27,'59801','USA'),(16,'jRotten','test123','johnny@pistols.com','1234565789','Johnny','Rotten','76 Anarchy Way','Apt. 15','Los Angeles',5,'12335','United States'),(17,'jRotten','test123','johnny@pistols.com','1234565789','Johnny','Rotten','76 Anarchy Way','Apt. 15','Los Angeles',5,'12335','United States'),(18,'jRamone','test123','joey@ramones.com','1234565789','Joey','Ramone','#1 End of Century Way','Apt. 15','New York',33,'12335','United States'),(19,'Test','Test','Test','Test','Test','Test','Test','Test','Test',1,'Test','Test');
 /*!40000 ALTER TABLE `novices` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-15 19:35:48
+-- Dump completed on 2020-11-23 21:07:03
